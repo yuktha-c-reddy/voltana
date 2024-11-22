@@ -110,9 +110,13 @@ export default {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(loginData.value),
         });
+      
         const result = await response.json();
-        if (result.success) {
+        if (result.token) {
+          
+          localStorage.setItem('authToken', result.token); 
           router.push('/dashboard');
+          
         } else {
           alert('Login failed: ' + (result.error || 'Unknown error'));
         }

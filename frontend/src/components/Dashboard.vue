@@ -1,6 +1,11 @@
 <template>
   <div>
+    
     <h1>Dashboard</h1>
+    <button @click="$router.push('/invite')">Invite a user</button>
+    <button @click="$router.push('/update')">Update a user</button>
+    <button @click="$router.push('/delete')">Delete a user</button>
+    
     <table v-if="tables.length" border="1">
       <thead>
         <tr>
