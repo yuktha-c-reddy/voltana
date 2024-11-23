@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <button @click="handleLogout">Logout</button>
+  <div class="form-box">
+ <h1 class="headings">Click here</h1>
+   
+    <button class="logout-button" @click="handleLogout">LOGOUT</button>
   </div>
 </template>
 
@@ -24,15 +26,18 @@ export default {
 </script>
 
 <style>
-button {
-  padding: 10px;
-  background-color: #f44336; 
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #e53935;
-}
+.logout-button{
+    font-family:monospace;
+    margin: 50px auto 0 auto;
+    width: 20vw;
+    height: 6vh;
+    border-radius: 5px;
+    border: 2px solid #edc835;
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px #edc835;
+    font-size: 17px;
+    font-weight: 600;
+    color: #edc835;
+    cursor: pointer;
+  }
 </style>
