@@ -2,10 +2,10 @@
   <div class="form-box">
      <h1 class="headings">Update your details</h1>
    
-      <header>Update User Information</header>
+      
       <form @submit.prevent="handleUpdateSubmit" class="form-input">
         <div class="input-box">
-          <label for="userId">Your User ID</label>
+          
           <input
             id="userId"
             required
@@ -16,7 +16,7 @@
           />
         </div>
         <div class="input-box">
-          <label for="name">Full Name</label>
+          
           <input
             id="name"
             class="input-form"
@@ -26,7 +26,7 @@
           />
         </div>
         <div class="input-box">
-          <label for="email">Email</label>
+          
           <input
             id="email"
             placeholder="Enter new email (optional)"
@@ -36,7 +36,7 @@
           />
         </div>
         <div class="input-box">
-          <label for="password">Password</label>
+          
           <input
             id="password"
             class="input-form"

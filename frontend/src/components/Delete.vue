@@ -5,7 +5,7 @@
   
       <form @submit.prevent="handleDeleteSubmit" class="form-input">
         <div class="input-box">
-          <label for="user_id">Your User ID</label>
+          
           <input
             id="user_id"
             required

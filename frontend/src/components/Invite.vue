@@ -5,7 +5,7 @@
 
       <form @submit.prevent="handleRegisterSubmit" class="form-input">
         <div class="input-box">
-          <label for="name">Full Name</label>
+          
           <input
             id="name"
             autocomplete="off"
@@ -16,7 +16,7 @@
           />
         </div>
         <div class="input-box">
-          <label for="email">Email</label>
+         
           <input
             id="email"
             required
@@ -27,7 +27,7 @@
           />
         </div>
         <div class="input-box">
-          <label for="password">Password</label>
+          
           <input
             id="password"
             required

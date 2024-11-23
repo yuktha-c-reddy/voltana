@@ -122,12 +122,12 @@ router.delete('/delete/:id', async (req, res) => {
   try {
     
     const decoded = jwt.verify(token, JWT_KEY);
-    console.log(decoded.userId);
+
     if (decoded.userId !== parseInt(id, 10)) {
       
       return res.status(403).json({ error: 'You can only delete your own account' });
     }
-    console.log("route correct");
+
     await userModel.deleteUser(id); 
     res.status(204).send();
   } catch (err) {
@@ -141,7 +141,7 @@ router.get('/tables', async (req, res) => {
   console.log('Incoming request for /api/tables');
   try {
     const result = await userModel.getAllUsers();
-    console.log('Query result:', result);
+   
     res.json(result);
   } catch (err) {
     console.error('Error fetching tables:', err);
