@@ -1,37 +1,37 @@
 <template>
   <div>
-    <h1>Dashboard</h1>
-    <button @click="$router.push('/invite')">Invite a user</button>
-    <button @click="$router.push('/update')">Update a user</button>
-    <button @click="$router.push('/delete')">Delete a user</button>
-    
+    <h1 class="headings">Dashboard</h1>
+   
     <div class="search-container">
       <input
+      class="input"
         type="text"
         v-model="searchQuery"
         placeholder="Search by name, email, or role"
       />
     </div>
-
-    <table v-if="filteredTables.length" border="1">
-      <thead>
+    <div class="table">
+    <table class="category-table" v-if="filteredTables.length" >
+      <thead class="category-thead">
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
+          <th class="category-th">ID</th>
+          <th class="category-th">Name</th>
+          <th class="category-th">Email</th>
+          <th class="category-th">Role</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="table in filteredTables" :key="table.id">
-          <td>{{ table.id }}</td>
-          <td>{{ table.name }}</td>
-          <td>{{ table.email }}</td>
-          <td>{{ table.role }}</td>
+          <td class="category-td">{{ table.id }}</td>
+          <td class="category-td">{{ table.name }}</td>
+          <td class="category-td">{{ table.email }}</td>
+          <td class="category-td">{{ table.role }}</td>
         </tr>
       </tbody>
     </table>
+    
     <p v-else>No results found</p>
+    </div>
   </div>
 </template>
 
@@ -72,16 +72,101 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
+
+
+.headings{
+  margin-top:5vh;
+  font-family:monospace;
+  font-size:5.5vh;
+  color:#ebc634;
+  text-align:center;
+}
+.table{
+  margin-top:5vh;
+    display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-x: auto;
+}
+.category-td , .category-th{
+    border: 1px solid #34d5eb;
+    padding: 8px;
+    font-family:monospace;
+    color:#34d5eb;
+    font-weight: 500;
+    text-align: left;
+    font-size:1.2rem;
+    word-wrap: break-word; 
+}
+
+.category-thead , .category-th{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color:#ebc634; 
+  font-size: 1.3rem;   
+}
+
+
 .search-container {
   margin: 10px 0;
+   display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.search-container input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+
+.input {
+  background-color:#000;
+   border: 1px solid #ebc634;
+   color:#ebc634;
   border-radius: 5px;
-  margin-bottom: 20px;
+  padding: 10px;
+  width: 30vw;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 1px  gray;
+  font-size: 18px;
+  transition: width 0.3s;
+  font-family: Consolas,monaco,monospace;
 }
+
+.input:focus {
+  outline: 1px solid #ebc634;
+  box-shadow: none;
+  
+}
+
+.input::placeholder {
+  color: #34d5eb;
+}
+
+
+.category-table {
+  width: 90%; 
+  max-width: 1200px; 
+  border-collapse: collapse; 
+}
+
+@media (max-width: 768px) {
+  .category-td, .category-th {
+    font-size: 0.9rem; 
+    padding: 6px; 
+  }
+  .category-table {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .category-td, .category-th {
+    font-size: 0.8rem; 
+    padding: 4px; 
+  }
+}
+
+
+
 </style>
