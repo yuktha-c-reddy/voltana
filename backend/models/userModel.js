@@ -28,7 +28,12 @@ const updateUser = async (id, name, email, role) => {
 
 // Delete a user
 const deleteUser = async (id) => {
-  await pool.query('DELETE FROM users WHERE id = $1', [id]);
+  const query = 'DELETE FROM users WHERE id = $1'; // PostgreSQL query
+  try {
+    await pool.query(query, [id]); // Ensure `pool` is correctly configured
+  } catch (err) {
+    throw new Error('Database error: ' + err.message);
+  }
 };
 
 module.exports = {

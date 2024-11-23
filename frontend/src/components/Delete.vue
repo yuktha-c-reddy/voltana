@@ -4,56 +4,79 @@
       <header>Delete User</header>
       <form @submit.prevent="handleDeleteSubmit" class="form">
         <div class="input-box">
-          <label for="user_id">User ID</label>
+          <label for="user_id">Your User ID</label>
           <input
             id="user_id"
             required
-            placeholder="Enter User ID"
+            placeholder="Enter your User ID"
             type="number"
             v-model="userId"
           />
         </div>
-        <button type="submit">Delete User</button>
+        <button type="submit">Delete My Account</button>
       </form>
     </section>
   </div>
 </template>
 
 <script>
+import { useRouter, useRoute } from 'vue-router';
 import axios from 'axios';
 
 export default {
   data() {
     return {
-      userId: '' 
+      userId: '', 
     };
+  },
+  setup() {
+    const router = useRouter();
+    const route = useRoute(); 
+
+    return { router, route }; 
   },
   methods: {
     async handleDeleteSubmit() {
+      const token = localStorage.getItem('authToken'); 
+      if (!token) {
+        alert('Please log in first');
+        this.router.push('/login'); // Redirect to login
+        return;
+      }
+
       try {
-        const res = await axios.delete(`http://localhost:8080/api/delete/${this.userId}`); // Use dynamic ID
-      
-        if (res.status === 200) {
-          alert('User deleted successfully');
+
+        const res = await axios.delete(
+          `http://localhost:8080/api/delete/${this.userId}`, 
+          {
+            headers: {
+              Authorization: `Bearer ${token}`, 
+            },
+          }
+        );
+
+        if (res.status === 204) {
+          alert('Your account has been deleted');
+          localStorage.removeItem('authToken'); // Clear the token
+          router.push('/login'); // Redirect to login
         } else {
-          alert('Failed to delete user. Please check the ID and try again.');
+          alert('Failed to delete user. Please try again.');
         }
       } catch (err) {
-        if (err.response) {
-          console.error('Error deleting user:', err.response.data);
-          alert('Error: ' + err.response.data.message);
+        if (err.response && err.response.data.error) {
+          alert(err.response.data.error); 
         } else {
           console.error('Network or other error:', err.message);
-          alert('Error: Unable to delete user. Check the server connection.');
+          alert('Error: Unable to delete account. Check server connection.');
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-/* Reuse the same styles from the form */
+
 .container {
   max-width: 500px;
   margin: auto;
@@ -84,7 +107,7 @@ button {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #d9534f; /* Red for delete */
+  background-color: #d9534f; 
   color: white;
   border: none;
   border-radius: 5px;

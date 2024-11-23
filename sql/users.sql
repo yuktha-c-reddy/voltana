@@ -17,7 +17,7 @@ CREATE TABLE users (
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 INSERT INTO users (name, email, password, role)
-VALUES ('Yuktha', 'yuktha.creddy@.com', crypt('iamgod', gen_salt('bf', 10)), 'admin');
+VALUES ('Yuktha', 'yuktha.creddy@gmail.com', crypt('iamgod', gen_salt('bf', 10)), 'admin');
 
 -- SELECT * FROM users;
 

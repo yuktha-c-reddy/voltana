@@ -63,7 +63,7 @@ router.post(
       }
 
       const match = await bcrypt.compare(password, user.password);
-      
+
       if (!match) {
         return res.status(400).json({ error: 'Incorrect password' });
       }
@@ -94,17 +94,32 @@ router.put('/update/:id', async (req, res) => {
   }
 });
 
-// Delete a user
+
 router.delete('/delete/:id', async (req, res) => {
+  
   const { id } = req.params;
+  const token = req.headers.authorization?.split(' ')[1];
+  if (!token) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
   try {
-    await userModel.deleteUser(id);
-    res.status(204).send(); // No content
+    
+    const decoded = jwt.verify(token, JWT_KEY);
+    console.log(decoded.userId);
+    if (decoded.userId !== parseInt(id, 10)) {
+      
+      return res.status(403).json({ error: 'You can only delete your own account' });
+    }
+    console.log("route correct");
+    await userModel.deleteUser(id); 
+    res.status(204).send();
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Failed to delete user' });
   }
 });
+
 
 router.get('/tables', async (req, res) => {
   console.log('Incoming request for /api/tables');
