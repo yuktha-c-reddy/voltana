@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <section class="container">
-      <header>Create User</header>
-      <form @submit.prevent="handleRegisterSubmit" class="form">
+  <div class="form-box">
+   
+       <h1 class="headings">Invite user!</h1>
+
+      <form @submit.prevent="handleRegisterSubmit" class="form-input">
         <div class="input-box">
           <label for="name">Full Name</label>
           <input
@@ -10,6 +11,7 @@
             autocomplete="off"
             placeholder="Enter full name"
             type="text"
+            class="input-form"
             v-model="formData.name"
           />
         </div>
@@ -18,8 +20,9 @@
           <input
             id="email"
             required
-            placeholder="Enter email"
+            placeholder="Enter email address"
             type="email"
+            class="input-form"
             v-model="formData.email"
           />
         </div>
@@ -28,14 +31,15 @@
           <input
             id="password"
             required
+            class="input-form"
             placeholder="Enter password"
             type="password"
             v-model="formData.password"
           />
         </div>
-        <button type="submit">Create User</button>
+        <button  class="button-confirm" type="submit">Create User</button>
       </form>
-    </section>
+  
   </div>
 </template>
 
@@ -87,45 +91,3 @@ export default {
 };
 </script>
 
-<style>
-
-.container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.header {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.input-box {
-  margin-bottom: 15px;
-}
-.input-box label {
-  display: block;
-  margin-bottom: 5px;
-}
-.input-box input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #45a049;
-}
-</style>
