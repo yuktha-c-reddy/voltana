@@ -1,7 +1,7 @@
 # Full Stack Web App
 
 This project is a full-stack web application that showcases front-end development using Vue.js, back-end development with Node.js and Express.js, and PostgreSQL database integration. It includes functionalities for user authentication, displaying a user dashboard, CRUD operations on user data, and more.
-Use this link to access website - [!link](https://voltana.vercel.app/)
+Use this link to access website - [link](https://voltana.vercel.app/)
 ## Features
 - **Sign Up**: Create a new account.
 - **Login**: Authenticate existing users.
