@@ -33,7 +33,7 @@
               type="password"
               v-model="loginData.password"
             />
-            <button class="button-confirm">LET'S GO!</button>
+            <button class="button-confirm">GO!</button>
           </form>
         </div>
         <div v-else class="flip-card__back">
@@ -62,7 +62,7 @@
               type="password"
               v-model="registerData.password"
             />
-            <button class="button-confirm">CONFIRM!</button>
+            <button class="button-confirm">DONE!</button>
           </form>
         </div>
       </div>
@@ -155,6 +155,17 @@ export default {
 };
 </script>
 <style scoped>
+:root {
+  background-color: #000;
+  font-family:monospace;
+}
+
+.form-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .form-input{
     --input-focus: #34d5eb;
@@ -187,8 +198,6 @@ export default {
     font-size: 17px;
   }
   .input-form{
-    width: 40vw;
-    height: 4vh;
     border-radius: 5px;
     border: 2px solid var(--main-color);
     background-color: var(--bg-color);
@@ -235,13 +244,12 @@ export default {
     flex-direction: column;
     gap: 30px;
     width: 6rem;
-    height: 4.4vh;
+    height: 4.3vh;
     transform: translateX(calc(50% - 10px));
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5vh;
-   
   }
   
   .toggle {
@@ -284,18 +292,16 @@ export default {
   
   .toggle:checked + .slider {
     background-color: var(--input-focus);
-    transform: translateX(-32px);
+    transform: translateX(-30px);
   }
   
   .toggle:checked + .slider:before {
     content: "";
-    transform: translateX(32px);
+    transform: translateX(55px);
   }
-
 .switch-div{
   display:flex;
   align-items:center;
   justify-content:center;
 }
 </style>
-

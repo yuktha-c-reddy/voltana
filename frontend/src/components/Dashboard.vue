@@ -1,5 +1,5 @@
-<template>
-  <div>
+<template style="background-color:#000">
+  <div >
     <h1 class="headings">Dashboard</h1>
    
     <div class="search-container">
@@ -73,6 +73,7 @@ export default {
 </script>
 
 <style>
+
 .table{
   margin-top:5vh;
     display:flex;
@@ -89,6 +90,7 @@ export default {
     text-align: left;
     font-size:1.2rem;
     word-wrap: break-word; 
+    background-color: black;
 }
 
 .category-thead , .category-th{
@@ -98,6 +100,7 @@ export default {
     font-weight: 600;
     color:#ebc634; 
   font-size: 1.3rem;   
+  background-color: black;
 }
 
 
@@ -138,6 +141,7 @@ export default {
   width: 90%; 
   max-width: 1200px; 
   border-collapse: collapse; 
+  background-color: black;
 }
 
 @media (max-width: 768px) {
