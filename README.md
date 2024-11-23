@@ -78,6 +78,7 @@ http://localhost:5173
 
 ### Additional Note:
 - The **`/` route** on the frontend contains a toggle for both **Login** and **Sign Up** forms. Users can create accounts or log in securely from the same page.
+- You can only update or delete your account. JWT token used for verification of userId before updating or deleting.
 
 ## Bonus Features Implemented
 
@@ -108,8 +109,10 @@ http://localhost:5173
 ![image](https://github.com/user-attachments/assets/f476e534-92b3-4256-9de6-35d211a934d5)
 <br/>
 ![image](https://github.com/user-attachments/assets/78a7cacc-06c4-4060-8c92-e4e89f79be7f)
-
 <br/>
+<br/>
+###Mobile View
+![image](https://github.com/user-attachments/assets/fbdf4adb-fee3-492e-b46c-5046d7f21a21)
 
 
 
