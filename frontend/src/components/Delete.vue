@@ -49,7 +49,7 @@ export default {
       try {
 
         const res = await axios.delete(
-          `http://localhost:8080/api/delete/${this.userId}`, 
+          `${import.meta.env.VITE_API_BASE_URL}/delete/${this.userId}`, 
           {
             headers: {
               Authorization: `Bearer ${token}`, 

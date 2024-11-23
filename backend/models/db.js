@@ -1,14 +1,12 @@
 
 const { Pool } = require('pg');
-
+require('dotenv').config();
 // PostgreSQL database configuration
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'user_management',
-  password: '2480',
-});
 
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }, 
+});
 // Test database connection
 pool.connect((err) => {
   if (err) {

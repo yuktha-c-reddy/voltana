@@ -107,7 +107,7 @@ export default {
 
     const handleLoginSubmit = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/login', {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(loginData.value),
@@ -129,7 +129,7 @@ export default {
 
     const handleRegisterSubmit = async () => {
       try {
-        const res = await axios.post('http://localhost:8080/api/signup', registerData.value );
+        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/signup`, registerData.value );
         alert("Signup successful");
         console.log('Signup successful:', res.data);
       } catch (err) {
