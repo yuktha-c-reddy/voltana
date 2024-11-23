@@ -83,7 +83,7 @@ http://localhost:5173
 ## Bonus Features Implemented
 
 1. **Deployed Application Online**  
-   - The application is deployed on [Platform Name] and can be accessed via [Deployed URL].
+   - The application is deployed  and can be accessed via [link](https://voltana.vercel.app/).
 
 2. **JWT-Based Authentication**  
    - Implemented secure authentication using JSON Web Tokens (JWT).  
