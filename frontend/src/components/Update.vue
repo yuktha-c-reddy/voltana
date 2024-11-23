@@ -4,12 +4,22 @@
       <header>Update User Information</header>
       <form @submit.prevent="handleUpdateSubmit" class="form">
         <div class="input-box">
-          <label for="full_name">Full Name</label>
+          <label for="userId">Your User ID</label>
           <input
-            id="full_name"
+            id="userId"
+            required
+            placeholder="Enter your User ID"
+            type="number"
+            v-model="formData.userId"
+          />
+        </div>
+        <div class="input-box">
+          <label for="name">Full Name</label>
+          <input
+            id="name"
             placeholder="Enter new full name (optional)"
             type="text"
-            v-model="formData.full_name"
+            v-model="formData.name"
           />
         </div>
         <div class="input-box">
@@ -42,8 +52,10 @@ import axios from 'axios';
 export default {
   data() {
     return {
+      
       formData: {
-        full_name: '',
+        userId: '', 
+        name: '',
         email: '',
         password: ''
       }
@@ -52,20 +64,31 @@ export default {
   methods: {
     async handleUpdateSubmit() {
       const updatedData = {};
+      const token = localStorage.getItem('authToken'); // Retrieve token from localStorage
 
-      if (this.formData.full_name) updatedData.full_name = this.formData.full_name;
+      // Only include fields with values in the request
+      if (this.formData.name) updatedData.name = this.formData.name;
       if (this.formData.email) updatedData.email = this.formData.email;
       if (this.formData.password) updatedData.password = this.formData.password;
-
+        console.log(this.formData.userId);
       try {
-        const res = await axios.put(`http://localhost:8080/api/update/$id`, updatedData);
+        const res = await axios.put(
+          `http://localhost:8080/api/update/${this.formData.userId}`,
+          updatedData,
+          {
+            headers: {
+              Authorization: `Bearer ${token}` 
+            }
+          }
+        );
+
         if (res.status === 200) {
           alert('User updated successfully');
         }
       } catch (err) {
         if (err.response) {
           console.error('Error updating user:', err.response.data);
-          alert('Error: ' + err.response.data.message);
+          alert('Error: ' + (err.response.data.message || 'Failed to update user'));
         } else {
           console.error('Network or other error:', err.message);
           alert('Error: Unable to update user. Check the server connection.');

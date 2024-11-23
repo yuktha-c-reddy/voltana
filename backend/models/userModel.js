@@ -26,11 +26,25 @@ const updateUser = async (id, name, email, role) => {
   return result.rows[0];
 };
 
+
+const findById = async (id) => {
+  const query = 'SELECT * FROM users WHERE id = $1'; 
+  try {
+    const result = await pool.query(query, [id]); 
+    if (result.rows.length === 0) {
+      return null; 
+    }
+    return result.rows[0]; 
+  } catch (err) {
+    throw new Error('Database error: ' + err.message); 
+  }
+};
+
 // Delete a user
 const deleteUser = async (id) => {
-  const query = 'DELETE FROM users WHERE id = $1'; // PostgreSQL query
+  const query = 'DELETE FROM users WHERE id = $1'; 
   try {
-    await pool.query(query, [id]); // Ensure `pool` is correctly configured
+    await pool.query(query, [id]); 
   } catch (err) {
     throw new Error('Database error: ' + err.message);
   }
@@ -40,5 +54,6 @@ module.exports = {
   createUser,
   getAllUsers,
   updateUser,
+  findById,
   deleteUser,
 };

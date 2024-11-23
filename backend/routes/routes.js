@@ -84,9 +84,25 @@ router.post(
 // Update user details
 router.put('/update/:id', async (req, res) => {
   const { id } = req.params;
-  const { name, email, role } = req.body;
+  const { name, email, role, password } = req.body;
+
   try {
-    const updatedUser = await userModel.updateUser(id, name, email, role);
+    // Retrieve the existing user from the database
+    const existingUser = await userModel.findById(id);
+
+    if (!existingUser) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Update only fields provided in the request
+    const updatedUser = await userModel.updateUser(
+      id,
+      name || existingUser.name,
+      email || existingUser.email,
+      role || existingUser.role,
+      password || existingUser.password
+    );
+
     res.status(200).json(updatedUser);
   } catch (err) {
     console.error(err);
