@@ -28,7 +28,7 @@ const updateUser = async (id, name, email, role) => {
 
 
 const findById = async (id) => {
-  const query = 'SELECT * FROM users WHERE id = $1'; 
+  const query = 'SELECT * FROM users WHERE id = $1 ORDER BY id ASC'; 
   try {
     const result = await pool.query(query, [id]); 
     if (result.rows.length === 0) {

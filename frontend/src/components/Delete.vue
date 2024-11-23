@@ -69,7 +69,7 @@ export default {
           alert(err.response.data.error); 
         } else {
           console.error('Network or other error:', err.message);
-          alert('Error: Unable to delete account. Check server connection.');
+         
         }
       }
     },
