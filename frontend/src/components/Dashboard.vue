@@ -60,7 +60,7 @@ export default {
   },
   async created() {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/tables`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}api/tables`, {
         validateStatus: false,
       });
       this.tables = response.data;

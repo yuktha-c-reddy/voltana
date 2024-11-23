@@ -131,7 +131,7 @@ export default {
 
     const handleRegisterSubmit = async () => {
       try {
-        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/signup`, registerData.value );
+        const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}api/signup`, registerData.value );
         alert("Signup successful");
         console.log('Signup successful:', res.data);
       } catch (err) {
