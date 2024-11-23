@@ -78,7 +78,7 @@ export default {
         console.log(this.formData.userId);
       try {
         const res = await axios.put(
-          `${import.meta.env.VITE_API_BASE_URL}/update/${this.formData.userId}`,
+          `${import.meta.env.VITE_API_BASE_URL}api/update/${this.formData.userId}`,
           updatedData,
           {
             headers: {
