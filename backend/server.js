@@ -6,7 +6,7 @@ const userRoutes = require('./routes/routes');
 
 
 app.use(cors({
-  origin: 'https://voltana.vercel.app/', 
+  origin: '*', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   credentials: true 
 }));
