@@ -31,7 +31,7 @@
               type="password"
               v-model="loginData.password"
             />
-            <button class="button-confirm">Let's go!</button>
+            <button class="button-confirm">LET'S GO!</button>
           </form>
         </div>
         <div v-else class="flip-card__back">
@@ -60,7 +60,7 @@
               type="password"
               v-model="registerData.password"
             />
-            <button class="button-confirm">Confirm!</button>
+            <button class="button-confirm">CONFIRM!</button>
           </form>
         </div>
       </div>
@@ -153,145 +153,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.form-input{
-    --input-focus: #29465B;
-    --font-color: #50663d;
-    --font-color-sub: #666;
-    --bg-color: white;
-    --main-color: #a3c585;
-    padding: 20px;
-    background:#8FB1CC;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-    width: 100%;
-    
-  }
-  .title {
-    color: var(--font-color);
-    font-weight: 900;
-    font-size: 20px;
-    margin-bottom: 25px;
-  }
-  .title span {
-    color: var(--font-color-sub);
-    font-weight: 600;
-    font-size: 17px;
-  }
-  .input-form{
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--font-color);
-    padding: 5px 10px;
-    outline: none;
-  }
-  .input::placeholder {
-    color: var(--font-color-sub);
-    opacity: 0.8;
-  }
-  
-  .input:focus {
-    border: 2px solid var(--input-focus);
-  }
-  .button-log:active, .button-confirm:active {
-    box-shadow: 0px 0px var(--main-color);
-    transform: translate(3px, 3px);
-  }
-  
-  .button-confirm {
-    margin: 50px auto 0 auto;
-    width: 120px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    background-color: var(--bg-color);
-    box-shadow: 4px 4px var(--main-color);
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--font-color);
-    cursor: pointer;
-  }
-  .wrapper{
-    margin-top: 0.5cm;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .switch {
-    --input-focus: #8FB1CC;
-    --bg-color: #fff;
-    --bg-color-alt: white;
-    --main-color: #8FB1CC;
-    --input-out-of-focus: #a3c585;
-    flex-direction: column;
-    gap: 30px;
-    width: 70px;
-    height: 36px;
-    transform: translateX(calc(50% - 10px));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2%;
-    margin-left: 47%;
-  }
-  
-  .toggle {
-    opacity: 0;
-  }
-  
-  .slider {
-    box-sizing: border-box;
-    border-radius: 100px;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--input-out-of-focus);
-    transition: 0.3s;
-  }
-  
-  .slider:before {
-    content: "";
-    box-sizing: border-box;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    left: 2px;
-    bottom: 1px;
-    border: 2px solid var(--main-color);
-    border-radius: 100px;
-    background-color: var(--bg-color);
-    color: var(--main-color);
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 25px;
-    transition: 0.3s;
-  }
-  
-  .toggle:checked + .slider {
-    background-color: var(--input-focus);
-    transform: translateX(-32px);
-  }
-  
-  .toggle:checked + .slider:before {
-    content: "";
-    transform: translateX(32px);
-  }
-</style>
+
