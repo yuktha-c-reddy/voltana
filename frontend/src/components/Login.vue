@@ -110,7 +110,8 @@ export default {
         console.log(`${import.meta.env.VITE_API_BASE_URL}`);
         const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}api/login`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache' },
           body: JSON.stringify(loginData.value),
         });
       
