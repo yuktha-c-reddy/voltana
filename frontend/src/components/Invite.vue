@@ -4,13 +4,13 @@
       <header>Create User</header>
       <form @submit.prevent="handleRegisterSubmit" class="form">
         <div class="input-box">
-          <label for="full_name">Full Name</label>
+          <label for="name">Full Name</label>
           <input
-            id="full_name"
+            id="name"
             autocomplete="off"
             placeholder="Enter full name"
             type="text"
-            v-model="formData.full_name"
+            v-model="formData.name"
           />
         </div>
         <div class="input-box">
@@ -49,7 +49,7 @@ export default {
   setup() {
     const router = useRouter();
     const formData = ref({
-      full_name: '',
+      name: '',
       email: '',
       password: '',
     });
@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style>
-/* Add your styles here */
+
 .container {
   max-width: 500px;
   margin: auto;

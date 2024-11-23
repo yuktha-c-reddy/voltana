@@ -40,7 +40,7 @@ export default {
       const token = localStorage.getItem('authToken'); 
       if (!token) {
         alert('Please log in first');
-        this.router.push('/login'); // Redirect to login
+        this.router.push('/'); // Redirect to login
         return;
       }
 
