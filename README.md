@@ -51,6 +51,8 @@ nodemon server.js
 ```
 The backend will be available at:
 http://localhost:8080
+![image](https://github.com/user-attachments/assets/a01afdf5-db86-482e-834c-c7e5a8137c2d)
+
 
 ```bash
 cd ../frontend
@@ -59,6 +61,8 @@ npm run dev
 ```
 The frontend will be available at:
 http://localhost:5173
+![image](https://github.com/user-attachments/assets/4a1ed480-7d24-45fb-82a1-3b6b6a1c9872)
+
 
 
 # API Endpoints
@@ -70,7 +74,7 @@ http://localhost:5173
 | `GET`           | `/api/tables`         | Retrieves a list of all users (requires JWT).          |
 | `PUT`           | `/api/update/:id`     | Updates details of an existing user.                  |
 | `DELETE`        | `/api/delete/:id`     | Deletes a user by their ID.                           |
-| `POST`          | `/api/invite`        | Adds a new user with basic details (used for invites). |
+| `POST`          | `/api/signup`         | Adds a new user with basic details (used for invites). |
 
 ### Additional Note:
 - The **`/` route** on the frontend contains a toggle for both **Login** and **Sign Up** forms. Users can create accounts or log in securely from the same page.
@@ -91,3 +95,21 @@ http://localhost:5173
 - **Login**: On successful login, a JWT is generated and returned to the client.
 - **Token Storage**: The token is stored securely in the browser (e.g., HTTP-only cookies or localStorage).
 - **Token Validation**: Protected API routes validate the JWT before allowing access to resources.
+
+### UI 
+![image](https://github.com/user-attachments/assets/0b691010-e51e-4c4d-a44d-51903b27bb88)
+<br/>
+![image](https://github.com/user-attachments/assets/c6acda3a-3eb4-48fc-a814-da0055418250)
+<br/>
+![image](https://github.com/user-attachments/assets/7ce033a1-05ad-4f2c-a823-7a46de73fea4)
+<br/>
+![image](https://github.com/user-attachments/assets/32cfb23a-2a96-4659-9812-3e67bff001b5)
+<br/>
+![image](https://github.com/user-attachments/assets/f476e534-92b3-4256-9de6-35d211a934d5)
+<br/>
+![image](https://github.com/user-attachments/assets/78a7cacc-06c4-4060-8c92-e4e89f79be7f)
+
+<br/>
+
+
+
