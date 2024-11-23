@@ -1,21 +1,23 @@
 <template>
-  <div>
-    <section class="container">
-      <header>Delete User</header>
-      <form @submit.prevent="handleDeleteSubmit" class="form">
+  <div class="form-box">
+<h1 class="headings">Delete account</h1>
+   
+  
+      <form @submit.prevent="handleDeleteSubmit" class="form-input">
         <div class="input-box">
           <label for="user_id">Your User ID</label>
           <input
             id="user_id"
             required
+            class="input-form"
             placeholder="Enter your User ID"
             type="number"
             v-model="userId"
           />
         </div>
-        <button type="submit">Delete My Account</button>
+        <button  class="button-confirm" type="submit">Delete My Account</button>
       </form>
-    </section>
+ 
   </div>
 </template>
 
@@ -75,45 +77,3 @@ export default {
 };
 </script>
 
-<style>
-
-.container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.header {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-.input-box {
-  margin-bottom: 15px;
-}
-.input-box label {
-  display: block;
-  margin-bottom: 5px;
-}
-.input-box input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #d9534f; 
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #c9302c;
-}
-</style>
