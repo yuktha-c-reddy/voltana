@@ -73,16 +73,6 @@ export default {
 </script>
 
 <style>
-
-
-
-.headings{
-  margin-top:5vh;
-  font-family:monospace;
-  font-size:5.5vh;
-  color:#ebc634;
-  text-align:center;
-}
 .table{
   margin-top:5vh;
     display:flex;
